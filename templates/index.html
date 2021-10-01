@@ -1,0 +1,32 @@
+<h1>The Family Trees</h1>
+<hr>
+<button type "button" class "btn btn-outline-primary">
+    <a href="?addform/">Add Union</a>
+</button>
+
+<button type "button" class "btn btn-outline-success">
+    <a href="?login/">Login</a>
+</button>
+
+<button type "button" class "btn btn-outline-danger">
+    <a href="?logout/">Logout</a>
+</button>
+{% load mptt_tags %}
+<ul class="root">
+    {% recursetree clans %}
+    <li>
+        {{ node.name }} {% if not node.is_leaf_node%}
+        <ul class="children">
+            {{ children }}
+        </ul>
+        {% endif %}
+    </li>
+    {% endrecursetree %}
+</ul>
+
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/boogstrap.min.css"
+rel="stylesheet"
+integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+crossorigin="anonymous"
+/>
