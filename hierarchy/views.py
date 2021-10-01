@@ -38,11 +38,11 @@ def login_view(request):
                 return HttpResponseRedirect(
                     request.GET.get("next", reverse("homepage"))
                 )
-    else:
-        form = LoginForm()
+    
+    form = LoginForm()
     return render(request, "generic.html", {"form": form})
 
 def logout_view(request):
     logout(request)
-    return HttpResponseRedirect(reverse("home"))
+    return HttpResponseRedirect(reverse("homepage"))
                    
