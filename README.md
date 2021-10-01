@@ -1,5 +1,5 @@
 # hierarchical-data-and-you
-
+The way to run this program is to enter a poetry shell first by typing poetry add django-mptt, then poetry install, poetry shell, then  python manange.py runserver.
 Sometimes when categorizing data, there are potentially infinite ways that the data can be organized. For example, a file path for an operating system includes all the parent folders and the the location of the item itself, like this:
 
 ```
